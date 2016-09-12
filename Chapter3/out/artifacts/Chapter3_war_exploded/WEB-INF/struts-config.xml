@@ -10,7 +10,7 @@
     </form-beans>
     <action-mappings>
         <action path="/login" name="loginForm" type="struts.action.LoginAction">
-            <forward name="/fail" path="/login.jsp"></forward>
         </action>
     </action-mappings>
+    <message-resources parameter="struts.action.ApplicationResources"></message-resources>
 </struts-config>

@@ -15,10 +15,9 @@
 </head>
 <body>
     <html:form action="/login.do" method="post">
-        Account:<html:text property = "userName"/><br/>
-        Password:<html:password property = "userPassword"/><br/>
+        Account:<html:text property = "userName"/><html:errors property = "errorUserInfoAccount"/><br>
+        Password:<html:password property = "userPassword"/><html:errors property = "errorUserInfoPasswd"/><br>
         <html:submit>Login</html:submit>
-        <html:errors property = "errorUserInfo"/>
     </html:form>
 </body>
 </html:html>

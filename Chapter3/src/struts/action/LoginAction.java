@@ -26,8 +26,13 @@ public class LoginAction extends Action {
             return new ActionForward("/success.jsp");
         }
         ActionMessages errors = new ActionMessages();
-        errors.add("errorUserInfo", new ActionMessage("userInfo_wrong"));
+        if(("admin".equals(userName)) != true){
+            errors.add("errorUserInfoAccount", new ActionMessage("userInfoAccount_wrong"));
+        }
+        if(("admin".equals(userPassword)) != true){
+            errors.add("errorUserInfoPasswd", new ActionMessage("userInfoPasswd_wrong"));
+        }
         this.saveErrors(request, errors);
-        return new ActionForward("/fail");
+        return new ActionForward("/login.jsp");
     }
 }
