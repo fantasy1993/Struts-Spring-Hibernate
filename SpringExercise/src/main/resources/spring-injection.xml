@@ -4,9 +4,9 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd" >
         
-<!--         <bean id="injectionService" class="com.imooc.ioc.injection.service.InjectionServiceImpl"> -->
+<!--         <spring.bean id="injectionService" class="com.imooc.spring.ioc.injection.service.InjectionServiceImpl"> -->
 <!--         	<property name="injectionDAO" ref="injectionDAO"></property> -->
-<!--         </bean> -->
+<!--         </spring.bean> -->
 
 		<bean id="injectionService" class="spring.ioc.injection.service.InjectionServiceImpl">
         	<constructor-arg name="injectionDAO" ref="injectionDAO"></constructor-arg>

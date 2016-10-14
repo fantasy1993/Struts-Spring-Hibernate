@@ -4,14 +4,14 @@ package interfaces;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
-import spring.ioc.OneInterface;
+import spring.ioc.interfaces.OneInterface;
 import base.UnitTestBase;
 
 @RunWith(BlockJUnit4ClassRunner.class)
 public class TestOneInterface extends UnitTestBase {
 
 	public TestOneInterface() {
-		super("classpath*:spring-ioc.xml");
+		super("classpath*:spring.ioc-spring.ioc.xml");
 	}
 	
 	@Test

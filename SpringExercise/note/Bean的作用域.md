@@ -1,0 +1,5 @@
+ - singleton:单例,指一个Bean容器中只存在一份
+ - prototype:每次请求（每次使用）创建新的实例，destory方法不生效
+ - request:每次http请求创建一个实例且仅在当前request内有效
+ - session:同上，每次http请求创建，当前session内有效
+ - global session:基于portlet的web中有效，如果是在web中，同是session

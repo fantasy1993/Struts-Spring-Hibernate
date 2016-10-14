@@ -1,4 +1,4 @@
-package spring.ioc;
+package spring.ioc.interfaces;
 
 /**
  * Created by zhuxinquan on 16-10-13.
