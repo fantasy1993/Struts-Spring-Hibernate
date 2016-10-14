@@ -10,7 +10,11 @@
     </form-beans>
     <action-mappings>
         <action path="/login" name="loginForm" type="struts.action.LoginAction">
+            <exception type="java.lang.Exception" scope="request" path="/login.jsp" key="inputError"/>
+            <forward name="success" path="success.jsp"/>
+            <forward name="fail" path="fail.jsp"/>
         </action>
     </action-mappings>
-    <message-resources parameter="struts.action.ApplicationResources"></message-resources>
+    <message-resources key="abc" parameter="ApplicationResources"/>
+    <message-resources parameter="ApplicationResources"/>
 </struts-config>

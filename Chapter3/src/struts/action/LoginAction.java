@@ -27,12 +27,16 @@ public class LoginAction extends Action {
         }
         ActionMessages errors = new ActionMessages();
         if(("admin".equals(userName)) != true){
-            errors.add("errorUserInfoAccount", new ActionMessage("userInfoAccount_wrong"));
+//            errors.add("errorUserInfoAccount", new ActionMessage("userInfoAccount_wrong"));
+            throw new Exception("账号错误");
         }
         if(("admin".equals(userPassword)) != true){
-            errors.add("errorUserInfoPasswd", new ActionMessage("userInfoPasswd_wrong"));
+//            errors.add("errorUserInfoPasswd", new ActionMessage("userInfoPasswd_wrong"));
+            throw new Exception("密码错误");
+
         }
-        this.saveErrors(request, errors);
-        return new ActionForward("/login.jsp");
+//        this.saveErrors(request, errors);
+//        return new ActionForward("/login.jsp");
+        return mapping.findForward("success");
     }
 }
