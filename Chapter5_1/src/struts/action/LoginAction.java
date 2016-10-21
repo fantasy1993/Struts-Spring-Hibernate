@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        DynaActionForm loginForm = (DynaActionForm)form;
-//        LoginForm loginForm = (LoginForm)form;
-        String userName = (String)loginForm.get("userName");
-        String userPassword  = (String)loginForm.get("userPassword");
-//        String userName = loginForm.getUserName();
-//        String userPassword = loginForm.getUserPassword();
+//        DynaActionForm loginForm = (DynaActionForm)form;
+        LoginForm loginForm = (LoginForm)form;
+//        String userName = (String)loginForm.get("userName");
+//        String userPassword  = (String)loginForm.get("userPassword");
+        String userName = loginForm.getUserName();
+        String userPassword = loginForm.getUserPassword();
 
         if("admin".equals(userName) && "admin".equals(userPassword)) {
 //            return new ActionForward("/success.jsp");

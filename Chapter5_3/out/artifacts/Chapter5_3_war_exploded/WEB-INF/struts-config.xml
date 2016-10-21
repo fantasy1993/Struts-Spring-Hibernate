@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="registerForm" type="form.RegisterForm"/>
+    </form-beans>
+    <action-mappings>
+        <action path="/registerBasic" name="registerForm"
+                type="action.RegisterBasicAction"
+                validate="true" input="/page/common/registerBasic.jsp">
+            <forward name="detail" path="/page/common/registerDetail.jsp"/>
+        </action>
+        <action path="/registerDetail" name="registerForm"
+                type="action.RegisterDetailAction"
+                validate="true" input="/page/common/registerDetail.jsp">
+            <forward name="introduction" path="/page/common/registerIntroduction.jsp"/>
+        </action>
+        <action path="/registerIntroduction" name="registerForm"
+                type="action.RegisterIntroductionAction"
+                validate="true" input="/page/common/registerIntroduction.jsp">
+            <forward name="success" path="/page/common/registerSuccess.jsp"/>
+        </action>
+    </action-mappings>
+    <message-resources parameter="ApplicationResources" key="CN"></message-resources>
+</struts-config>

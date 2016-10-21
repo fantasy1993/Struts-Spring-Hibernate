@@ -22,13 +22,16 @@
     <%--</html:form>--%>
     <html:form action="/login.do" method="post">
         <bean:message key="info.input" arg0="账号"/>
-            <html:text property="userName"/><br/>
+            <html:text property="userName"/>
+            <html:errors property="errorUserInfoAccount"/><br>
         <bean:message key="info.input" arg0="密码"/>
-            <html:password property="userPassword"/><br/>
+            <html:password property="userPassword"/>
+            <html:errors property="errorUserInfoPasswd"/><br>
         <html:submit><bean:message key="login"/></html:submit>
+        <html:reset><bean:message key="reset"/></html:reset>
     </html:form>
-    <html:messages id="exception">
-        <bean:write name="exception"/>
-    </html:messages>
+    <%--<html:messages id="exception">--%>
+        <%--<bean:write name="exception"/>--%>
+    <%--</html:messages>--%>
 </body>
 </html:html>

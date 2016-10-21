@@ -6,16 +6,18 @@
 
 <struts-config>
     <form-beans>
-        <form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm">
-            <form-property name="userName" type="java.lang.String"/>
-            <form-property name="userPassword" type="java.lang.String"/>
+        <form-bean name="loginForm" type="struts.form.LoginForm">
+            <!--当使用动态actionform时无法使用validate和reset方法-->
+        <!--<form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm">-->
+            <!--<form-property name="userName" type="java.lang.String"/>-->
+            <!--<form-property name="userPassword" type="java.lang.String"/>-->
         </form-bean>
     </form-beans>
     <action-mappings>
-        <action path="/login" name="loginForm" type="struts.action.LoginAction">
-            <exception type="java.lang.Exception" scope="request" path="/login.jsp" key="inputError"/>
-            <forward name="success" path="/success.jsp"/>
-            <forward name="fail" path="/fail.jsp"/>
+        <action path="/login" name="loginForm" type="struts.action.LoginAction" validate="true" scope="request" input="/login.jsp">
+            <exception type="java.lang.Exception" scope="session" path="/login.jsp" key="inputError"/>
+            <forward name="success" path="/pages/common/success.jsp"/>
+            <forward name="fail" path="/pages/common/fail.jsp"/>
         </action>
     </action-mappings>
     <!--<message-resources key="abc" parameter="ApplicationResources"/>-->

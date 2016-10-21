@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="struts-taglib-1.3.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/jar/struts-taglib-1.3.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
