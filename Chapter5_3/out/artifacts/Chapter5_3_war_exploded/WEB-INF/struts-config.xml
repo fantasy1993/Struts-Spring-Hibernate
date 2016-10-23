@@ -25,5 +25,6 @@
             <forward name="success" path="/page/common/registerSuccess.jsp"/>
         </action>
     </action-mappings>
+    <controller processorClass="action.MyRequestProcessor"></controller>
     <message-resources parameter="ApplicationResources" key="CN"></message-resources>
 </struts-config>

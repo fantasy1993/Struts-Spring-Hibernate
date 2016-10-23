@@ -8,7 +8,9 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>action</servlet-name>
-        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <servlet-class>action.MyActionServlet</servlet-class>
+        <!--通过自定义的ActionServlet初始化一些参数修正字符集-->
+        <!--<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>-->
         <init-param>
             <param-name>config</param-name>
             <param-value>/WEB-INF/struts-config.xml</param-value>
