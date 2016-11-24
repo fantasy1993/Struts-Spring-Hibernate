@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="loginCode" extends="struts-default">
+        <interceptors>
+            <interceptor name="checkLogin" class="com.zhuxinquan.CheckLoginInterceptor"/>
+            <interceptor-stack name="checkLoginStack">
+                <interceptor-ref name="checkLogin"/>
+            </interceptor-stack>
+            <interceptor-stack name="myBasicStack">
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="params"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <action name="login" class="com.zhuxinquan.LoginAction">
+            <result name="success">/loginSuccess.jsp</result>
+            <result name="input">/login.jsp</result>
+            <interceptor-ref name="checkLogin"/>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+        <action name="test" class="com.zhuxinquan.TestAction">
+            <result name="success">/testSuccess.jsp</result>
+            <result name="input">/login.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="checkLogin"/>
+        </action>
+    </package>
+</struts>

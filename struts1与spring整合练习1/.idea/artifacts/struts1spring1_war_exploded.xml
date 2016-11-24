@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="struts1与spring整合练习1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/struts1spring1_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="struts1与spring整合练习1/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="struts1与spring整合练习1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="struts-1.2.x" />
+          <element id="library" level="project" name="Spring-4.3.4.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

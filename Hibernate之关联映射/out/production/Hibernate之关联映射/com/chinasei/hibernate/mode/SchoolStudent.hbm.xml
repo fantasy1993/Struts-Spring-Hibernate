@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.chinasei.hibernate.mode.School" table="SCHOOL">
+        <id name="schoolId" type="int">
+            <column name="SCHOOL_ID" precision="38" scale="0" />
+            <!--<generator class="sequence">-->
+            	<!--<param name="sequence">school_seq</param>-->
+            <!--</generator>-->
+        </id>
+        <property name="schoolName" type="string">
+            <column name="SCHOOL_NAME" length="50" not-null="true" />
+        </property>
+        <property name="schoolAddress" type="string">
+            <column name="SCHOOL_ADDRESS" length="100" not-null="true" />
+        </property>
+        <set name="student" inverse="true" cascade="all">
+	        <key column="SCHOOL_ID" not-null="true" />
+	        <one-to-many class="com.chinasei.hibernate.mode.Student" />
+    	</set>
+
+    </class>
+    <class name="com.chinasei.hibernate.mode.Student" table="STUDENT">
+        <id name="studentId" type="int">
+	        <column name="STUDENT_ID" precision="38" scale="0" />
+	        <!--<generator class="sequence">-->
+	            	<!--<param name="sequence">student_seq</param>-->
+	        <!--</generator>-->
+	    </id>
+	    <property name="studentNumber" type="string">
+	        <column name="STUDENT_NUMBER" length="20" not-null="true" />
+	    </property>
+        <property name="studentName" type="string">
+            <column name="STUDENT_NAME" length="10" not-null="true" />
+        </property>                 
+    </class>
+</hibernate-mapping>
