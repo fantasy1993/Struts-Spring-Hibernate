@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.custom.i18n.resources" value="MessageResources"></constant>
+    <package name="demo" extends="struts-default" namespace="/">
+
+        <interceptors>
+            <interceptor-stack name="tokenStack">
+                <interceptor-ref name="token">
+                    <param name="excludeMethods">input</param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <!-- results made available to all actions -->
+        <global-results>
+            <result name="success">/pages/welcome.jsp</result>
+        </global-results>
+
+        <action name="input" method="input" class="action.InputAction">
+            <result name="input">/login.jsp</result>
+        </action>
+
+        <!--<action name="user" method="{1}" class="userAction">-->
+            <!--<result name="userlist">/pages/users.jsp</result>-->
+        <!--</action>-->
+
+        <action name="login" method="login" class="action.LoginAction">
+            <result name="input">/login.jsp</result>
+            <result name="userlist">/pages/users.jsp</result>
+        </action>
+
+        <action name="user!*" method="{1}" class="action.ListAction">
+            <result name="userlist">/pages/users.jsp</result>
+        </action>
+
+        <action name="regist!*" method="{1}" class="action.RegistAction">
+            <!--<interceptor-ref name="tokenStack"></interceptor-ref>-->
+            <!--<result name="invalid.token">/pages/regist.jsp</result>-->
+            <result name="input">/pages/regist.jsp</result>
+        </action>
+
+    </package>
+</struts>
