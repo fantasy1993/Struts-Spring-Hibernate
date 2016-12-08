@@ -62,7 +62,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements IUserDao {
 			session = getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();
 			//数据库暂时为设置主键，存在多个用户名相同的情况，此处仅仅判断是否已被占用，返回一个即可证明已经占用
-			user = (Users)session.createQuery(hql).setParameter(0, userName).list().get(0);
+			user = (Users)session.createQuery(hql).setParameter(0, userName).uniqueResult();
 			transaction.commit();
 		}catch (Exception e){
 			e.printStackTrace();
