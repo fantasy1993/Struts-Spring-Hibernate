@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="action"/>
+    <constant name="struts.custom.i18n.resources" value="app"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="upload" class="com.upload.action.FileUploadAction">
+            <result>/index.jsp</result>
+            <result name="input">/pages/error.jsp</result>
+            
+            <interceptor-ref name="fileUpload">
+                <!--文件允许最大上传的字节数-->
+                <param name="maximumSize">1000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+    </package>
+</struts>
