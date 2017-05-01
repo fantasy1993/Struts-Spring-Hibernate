@@ -3,7 +3,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import javax.annotation.Resource;
 
 /**
@@ -15,12 +14,7 @@ import javax.annotation.Resource;
 @ContextConfiguration("classpath:applicationContext3.xml")
 public class SpringDemoTest3 {
 
-
-    /*
-    此时需要注入代理类：因为代理类进行增强操作
-     */
     @Resource(name = "accountService")
-//    @Resource(name = "accountServiceProxy")
     private AccountService accountService;
 
     @Test

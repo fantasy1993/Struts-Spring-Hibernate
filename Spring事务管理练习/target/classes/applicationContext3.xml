@@ -44,6 +44,14 @@
     <!--配置事物的通知：(事物的增强)-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
+            <!--
+           		propagation	    :事务传播行为
+				isolation	    :事务的隔离级别
+				read-only	    :只读
+				rollback-for    :发生哪些异常回滚
+				no-rollback-for	:发生哪些异常不回滚
+				timeout		    :过期信息
+            -->
             <tx:method name="transfer" propagation="REQUIRED"/>
         </tx:attributes>
     </tx:advice>
