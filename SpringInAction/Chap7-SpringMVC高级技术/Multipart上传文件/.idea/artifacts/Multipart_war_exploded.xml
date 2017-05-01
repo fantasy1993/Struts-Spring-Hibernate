@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Multipart上传文件:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Multipart_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Multipart上传文件/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Multipart上传文件" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
