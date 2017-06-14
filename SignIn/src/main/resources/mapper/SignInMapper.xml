@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.SignInDao">
+
+    <!-- insert语句 -->
+    <insert id="insertSignInRecoder" parameterType="int" keyProperty="id">
+        insert into signinrecoder(uid) values (#{uid})
+    </insert>
+
+    <select id="countCurDateNormal" resultType="int">
+        SELECT COUNT(DISTINCT uid) FROM signinrecoder WHERE `timestamp` BETWEEN CONCAT(CURDATE(), " 00:00:00") AND CONCAT(CURDATE(), " 23:59:59") AND `leave`=0;
+    </select>
+
+    <select id="countCurDateLeave" resultType="int">
+        select count(distinct uid) from signinrecoder where `leave` = 1 and `timestamp` BETWEEN CONCAT(CURDATE(), " 00:00:00") AND CONCAT(CURDATE(), " 23:59:59") and uid not in (select distinct uid from signinrecoder where `leave` = 0 and `timestamp` BETWEEN CONCAT(CURDATE(), " 00:00:00") AND CONCAT(CURDATE(), " 23:59:59"))
+    </select>
+
+    <select id="querySignIn" resultType="int" parameterType="int">
+        SELECT count(*) FROM signinrecoder WHERE `uid` = #{uid} AND `timestamp` BETWEEN CONCAT(CURDATE(), " 00:00:00") AND CONCAT(CURDATE(), " 23:59:59");
+    </select>
+
+</mapper>

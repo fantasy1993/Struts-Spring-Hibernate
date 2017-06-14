@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--jquery-->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./jquery1.8.3.min.js"></script>
+    <!--bootstrap-->
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./menu.css">
+    <title>签到管理</title>
+</head>
+<body>
+<div id="container">
+
+    <div id="header">
+        <div id="headertitle">
+            <h1>签到管理系统</h1>
+        </div>
+        <div id="exist">
+            <a href="#"><button type="button" class="btn btn-info">安全退出</button></a>
+        </div>
+    </div>
+
+    <div id="menu">
+        <ul class="menu">
+            <li class="level1">
+                <a href="#none">个人中心</a>
+            </li>
+            <li class="level1">
+                <a href="#none">考勤统计</a>
+            </li>
+            <li class="level1">
+                <a href="#none">请假申请</a>
+            </li>
+            <li class="level1">
+                <a href="#none">签到管理</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="currentlocaltion">
+            <span>当前位置 >> 个人中心 >> 签到管理</span>
+        </div>
+        <hr style="border-color: black; margin-top: 0px; border-style: dashed; margin-bottom: 0px;">
+        <div id="manageinfo">
+            <span>当前已签到：</span><br>
+            <span>当前未签到：</span>
+        </div>
+        <div class="manager">
+            <a class="btn btn-default userinfobutton" href="#" role="button">已签到列表</a>
+            <a class="btn btn-default userinfobutton" href="#" role="button">未签到列表</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Copyright &copy;
+            <script type="text/javascript">
+                copyright=new Date();
+                update=copyright.getFullYear();
+                document.write(update);
+            </script>
+            All Rights Reserved.</p>
+    </div>
+
+</div>
+</body>
+</html>

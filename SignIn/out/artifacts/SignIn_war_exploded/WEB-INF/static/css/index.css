@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+}
+
+#container {
+    width:1200px;
+    margin: 0 auto;
+    height: 808px;
+}
+
+#header {
+    background-color: #768f92;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+#headertitle {
+    height: 50px;
+    width: 400px;
+    position: absolute;
+    margin-left: 80px;
+    letter-spacing: 30px;
+    font-style: italic;
+}
+
+#content {
+    background-color: #EEEEEE;
+    height: 700px;
+    width: 930px;
+    float: right;
+}
+
+#menu {
+    background-color: #768f92;
+    height: 700px;
+    width: 250px;
+    float: left;
+}
+
+#footer {
+    background-color:#768f92;
+    clear:both;
+    text-align:center;
+    width: 1200px;
+    margin-top: 710px;
+}
+
+.menuul {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+/*#menuul > li {*/
+    /*margin: 10px 0;*/
+/*}*/
+
+#exist {
+    width: 80px;
+    height: 35px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+#userinfo {
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 800px;
+    height: 600px;
+}
+
+#changeinfo {
+    float: left;
+    width: 500px;
+}
+
+#currentlocaltion {
+    font-size: 20px;
+}
+
+.row {
+    height: 60px;
+    /*background: gray;*/
+    font-size: 20px;
+    padding: 10px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    float: right;
+    margin-right: 70px;
+    margin-top: 15px;
+}
+
+.manager {
+    width: 100%;
+    height: 70px;
+    margin-top: 140px;
+    padding-left: 20px;
+}
+
+.manager > a {
+    margin: 15px 15px;
+    width: 90px;
+}
+
+.userinfobutton {
+
+}
+
+.avatar > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+#footer > p {
+    margin: 0px;
+}
+
+.col-md-2 {
+    text-align: right;
+}
+
+#echarts {
+    width: 600px;
+    height: 400px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+#manageinfo {
+    margin-left: 40px;
+    margin-top: 50px;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
