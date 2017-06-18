@@ -48,4 +48,22 @@ public class SignInManagerController {
         return new ModelAndView("signinmanager");
     }
 
+    @RequestMapping("approve")
+    public ModelAndView approve(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        if(session.getAttribute("login") != null) {
+            if((Boolean)session.getAttribute("login") == false){
+                request.setAttribute("info", "请登陆");
+                request.setAttribute("redirectPage", "/");
+                return new ModelAndView("redirect");
+            }
+        }
+        User user = (User) session.getAttribute("user");
+        if(user.getFlag() == 0){
+            request.setAttribute("info", "你无权进行操作！");
+            return new ModelAndView("home");
+        }
+        return new ModelAndView("approve");
+    }
+
 }

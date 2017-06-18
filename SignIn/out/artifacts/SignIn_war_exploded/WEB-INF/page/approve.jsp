@@ -1,4 +1,6 @@
-<%@ page import="com.web.model.User" %><%--
+<%@ page import="com.web.model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.web.model.LeaveMessage" %><%--
   Created by IntelliJ IDEA.
   User: zhuxinquan
   Date: 6/13/17
@@ -8,6 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     User user = (User) session.getAttribute("user");
+    List<LeaveMessage> list = (List<LeaveMessage>) request.getAttribute("leavemessagelist");
 %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -71,39 +74,42 @@
 
     <div id="content">
         <div id="currentlocaltion">
-            <span>当前位置 >> 个人中心 >> 请假申请</span>
+            <span>当前位置 >> 个人中心 >> 签到管理 >> 请假审批</span>
         </div>
         <hr style="border-color: black; margin-top: 0px; border-style: dashed; margin-bottom: 0px;">
-        <div id="userinfo">
-            <div id="askforleave">
-                <form class="form-horizontal" action="/askforleave/submit" method="post">
-                    <input name="uid" type="hidden" value="<%=user.getId()%>"/>
-                    <div class="form-group">
-                        <label for="something" class="col-sm-2 control-label">请假事由</label>
-                        <div class="col-sm-10">
-                            <textarea type="text" class="form-control" id="something" name="something" placeholder="请假事由"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputUserName" class="col-sm-2 control-label">请假时间</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputUserName" name="time" onclick="laydate()" placeholder="格式：2017-01-02"/>
-                        </div>
-                        <script>
-                            ;!function(){
-                                laydate({
-                                    elem: '#demo'
-                                })
-                            }();
-                        </script>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" value="提交">提交</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+        <div id="leaveuser">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Username</th>
+                    <th>Something</th>
+                    <th>Time</th>
+                    <th>Approve</th>
+                </tr>
+                <%
+                    for (LeaveMessage leaveMessage:list) {
+                %>
+                <tr>
+                    <td><%=leaveMessage%></td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <a href="/approval?id=12"><button>批准</button></a>
+                        <a href="/approval?id=12"><button>撤销</button></a>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <a href="/approval?id=12"><button>批准</button></a>
+                        <a href="/approval?id=12"><button>撤销</button></a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 

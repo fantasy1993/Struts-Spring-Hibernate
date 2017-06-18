@@ -65,6 +65,7 @@
         <div class="manager">
             <a class="btn btn-default userinfobutton" href="#" role="button">已签到列表</a>
             <a class="btn btn-default userinfobutton" href="#" role="button">未签到列表</a>
+            <a class="btn btn-default userinfobutton" href="/signinmanager/approve" role="button">请假审批</a>
         </div>
     </div>
 

@@ -7,7 +7,7 @@
 
     <!-- insert语句 -->
     <insert id="insertLeaveMessage" parameterType="LeaveMessage" keyProperty="id">
-        INSERT INTO askforleave(something, time) VALUE (#{something}, #{time});
+        INSERT INTO askforleave(uid, something, time) VALUE (#{uid}, #{something}, #{time});
     </insert>
 
 

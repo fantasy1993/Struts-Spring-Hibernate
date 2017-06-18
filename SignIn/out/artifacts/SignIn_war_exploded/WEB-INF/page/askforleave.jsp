@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.web.model.User" %><%--
   Created by IntelliJ IDEA.
   User: zhuxinquan
   Date: 6/13/17
@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    User user = (User) session.getAttribute("user");
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -74,6 +77,7 @@
         <div id="userinfo">
             <div id="askforleave">
                 <form class="form-horizontal" action="/askforleave/submit" method="post">
+                    <input name="uid" type="hidden" value="<%=user.getId()%>"/>
                     <div class="form-group">
                         <label for="something" class="col-sm-2 control-label">请假事由</label>
                         <div class="col-sm-10">
@@ -83,7 +87,7 @@
                     <div class="form-group">
                         <label for="inputUserName" class="col-sm-2 control-label">请假时间</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputUserName" name="time" onclick="laydate()" placeholder="格式：2017-01-02"></input>
+                            <input type="text" class="form-control" id="inputUserName" name="time" onclick="laydate()" placeholder="格式：2017-01-02"/>
                         </div>
                         <script>
                             ;!function(){
